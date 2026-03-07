@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/products', [ProductController::class, 'index'])
-   ->name('products.index');
+   ->name('products.index');         
+Route::get('/products/search', [ProductController::class, 'search'])->name('products.search');
+Route::get('/products/register', [ProductController::class, 'register'])->name('products.register');
+Route::post('/products/store', [ProductController::class, 'store'])->name('products.store');
 Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show');
-Route::post('/products/register', [ProductController::class, 'register'])->name('products.register');
-Route::post('/products/search', [ProductController::class, 'search'])->name('products.search');
-
 Route::post('/products/update', [ProductController::class, 'update'])->name('products.update');
 
 Route::post('/products/delete', [ProductController::class, 'delete'])->name('products.delete');

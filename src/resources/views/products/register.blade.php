@@ -38,6 +38,11 @@
                     <input type="text" name="price">
                 </div>
 
+                <div>
+                    <lavel>商品画像</lavel>
+                    <input type="file" name="image">
+                </div>
+
 
                 <div>
                     <label>季節</label>

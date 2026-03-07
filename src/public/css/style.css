@@ -98,3 +98,14 @@ body{
   font-size:18px;
   cursor:pointer;
 }
+.product-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.detail-image img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+}

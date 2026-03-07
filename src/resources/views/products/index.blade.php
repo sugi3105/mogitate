@@ -30,13 +30,13 @@
 
                 <option value="">価格順で表示</option>
 
-                <option value="high"
-                    {{ request('sort') == 'high' ? 'selected' : '' }}>
+                <option value="desc"
+                    {{ request('sort') == 'desc' ? 'selected' : '' }}>
                     価格が高い順
                 </option>
 
-                <option value="low"
-                    {{ request('sort') == 'low' ? 'selected' : '' }}>
+                <option value="asc"
+                    {{ request('sort') == 'asc' ? 'selected' : '' }}>
                     価格が低い順
                 </option>
 
