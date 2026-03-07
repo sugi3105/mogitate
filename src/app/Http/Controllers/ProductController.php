@@ -30,6 +30,38 @@ class ProductController extends Controller
 }
     //$products = Product::all();
    // $products = Product::with('seasons')->get();
-    
+    public function show($productId)
+{
+    $product = Product::findOrFail($productId);
+
+    return view('products.show', compact('product'));
+}
+    public function update(Request $request)
+{
+    $product = Product::find($request->id);
+
+    $product->name = $request->name;
+    $product->price = $request->price;
+    $product->season = $request->season;
+    $product->description = $request->description;
+
+    $product->save();
+
+    return redirect()->route('products.index');
+}
+
+
+    public function delete(Request $request)
+{
+    $product = Product::find($request->id);
+
+    $product->delete();
+
+    return redirect()->route('products.index');
+}
+    public function register()
+{
+    return view('products.register');
+}
 }
     
