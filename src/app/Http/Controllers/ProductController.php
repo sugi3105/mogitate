@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Http\Requests\ProductRequest;
 
 
 class ProductController extends Controller
@@ -50,7 +51,7 @@ class ProductController extends Controller
 {
     return view('products.register');
 }
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = new Product();
 

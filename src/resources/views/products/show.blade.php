@@ -10,13 +10,17 @@
 
     <div class="detail-area">
 
+       <div class="detail-image">
 
-        <div class="detail-image">
-            <img src="{{ asset('images/fruits-img/' . $product->image) }}">
-        </div>
+       <img id="preview"
+       src="{{ asset('images/fruits-img/' . $product->image) }}"
+       alt="">
 
+       <input type="file" name="image" form="update-form">
 
-        <div class="detail-info">
+    </div>
+
+    <div class="detail-form">
 
             <form action="{{ route('products.update') }}" method="POST">
                 @csrf
@@ -25,12 +29,12 @@
 
                 <div class="form-group">
                     <label>商品名</label>
-                    <input type="text" name="name" value="{{ $product->name }}">
+                    <input type="text" name="name" value="{{ old('name',  $product->name) }}">
                 </div>
 
                 <div class="form-group">
                     <label>値段</label>
-                    <input type="text" name="price" value="{{ $product->price }}">
+                    <input type="text" name="price" value="{{ old('price',  $product->price) }}">
                 </div>
 
 
@@ -41,31 +45,35 @@
 
                         <label>
                             <input type="radio" name="season" value="1">
+                            {{ old('season',$product->season) == 1 ? 'checked' : '' }}>
                             春
                         </label>
 
                         <label>
                             <input type="radio" name="season" value="2">
+                            {{ old('season',$product->season) == 2 ? 'checked' : '' }}>
                             夏
                         </label>
 
                         <label>
                             <input type="radio" name="season" value="3">
+                            {{ old('season',$product->season) == 3 ? 'checked' : '' }}>
                             秋
                         </label>
 
                         <label>
                             <input type="radio" name="season" value="4">
+                            {{ old('season',$product->season) == 4 ? 'checked' : '' }}>
                             冬
                         </label>
 
-                    </div>
+                      </div>
                     </div>
                 <div class="form-group">
                     <label>商品説明</label>
 
                     <textarea name="description" rows="5">
-                      {{ $product->description }}
+                      {{old('description',$product->description) }}
                     </textarea>
                 </div>
 
@@ -79,7 +87,6 @@
                     <button type="submit" class="save-btn">
                         変更を保存
                     </button>
-
                 </div>
 
             </form>

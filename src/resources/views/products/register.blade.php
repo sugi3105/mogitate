@@ -3,23 +3,7 @@
 @section('content')
 
 <div class="container">
-
-    <p>
-        <a href="{{ route('products.index') }}">商品一覧</a>
-        ＞ 商品登録
-    </p>
-
-
-    <div class="detail-area">
-
-        <div class="detail-image">
-
-            <img id="preview" src="{{ asset('images/noimage.png') }}" alt="">
-
-            <input type="file" name="image" form="register-form">
-
-        </div>
-
+     <h2>商品登録</h2>
 
         <div class="detail-form">
 
@@ -28,44 +12,71 @@
                 @csrf
 
                 <div>
-                    <label>商品名</label>
+                    <label>商品名
+                    <span class="required">必須</span>
+                    </lavel>
                     <input type="text" name="name">
+                    @error('name')
+                      <p class="error">{{ $message }}</p>
+                    @enderror
                 </div>
 
 
                 <div>
-                    <label>価格</label>
+                    <label>価格
+                    <span class="required">必須</span>
+                    </label>
                     <input type="text" name="price">
+
+                    @error('price')
+                      <p class="error">{{ $message }}</p>
+                    @enderror
+
+                    
+
                 </div>
 
                 <div>
-                    <lavel>商品画像</lavel>
+                    <label>商品画像
+                    <span class="required">必須</span>
+                    </label>
                     <input type="file" name="image">
+
+                    @error('file')
+                      <p class="error">{{ $message }}</p>
+                    @enderror
+
                 </div>
 
 
                 <div>
-                    <label>季節</label>
+                    <label>季節
+                    <span class="required">必須</span>
+                    </label>
 
                     <div>
 
                         <label>
-                            <input type="radio" name="season" value="春">
+                           <input type="radio" name="season" value="spring"
+                           {{ old('season') == 'spring' ? 'checked' : '' }}>
                             春
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="夏">
-                            夏
+                            <input type="radio" name="season" value="summer"
+                            {{ old('season') == 'summer' ? 'checked' : '' }}>
+                             夏
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="秋">
-                            秋
-                        </label>
+                            <input type="radio" name="season" value="autnmn"
+　　　　　　　　    　　　　 {{ old('season') == 'autumn' ? 'checked' : '' }}>
+　　　　　　　　　　　　　　　　秋
+　　　　　　　　　　　　　 </label>
 
                         <label>
-                            <input type="radio" name="season" value="冬">
+                            <input type="radio" name="season" value="winter"
+                            {{ old('season') == 'winter' ? 'checked' : '' }}>
                             冬
                         </label>
 
@@ -75,9 +86,14 @@
 
 
                 <div>
-                    <label>商品説明</label>
-
+                    <label>商品説明
+                    <span class="form__label--required">必須</span>
+                    </label>
                     <textarea name="description" rows="5"></textarea>
+                     
+                    @error('description')
+                      <p class="error">{{ $message }}</p>
+                    @enderror
 
                 </div>
 
