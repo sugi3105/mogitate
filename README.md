@@ -32,7 +32,7 @@ DB_PASSWORD=laravel_pass
 
 ## ER図
 　
-![alt](er.png)
+![ER図](er.png)
 
 
 　
