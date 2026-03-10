@@ -30,9 +30,13 @@ DB_PASSWORD=laravel_pass
    Laravel8.83.27
    MySQL8.0.26
 
+## ER図
+　
+![ER図](./er.png)
 
 
-
+　
+　
 ## URL
-   環境開発:http:/localhost/
+   環境開発:http://localhost/
    phpMyAdmin: http://localhost:8080
