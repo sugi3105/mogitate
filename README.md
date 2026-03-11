@@ -1,7 +1,7 @@
 # mogitate
 #   環境構築
-・　git clone git@github.com:sugi3105/mogitate.git
-・　docker-compose up -d --build
+・　`git clone git@github.com:sugi3105/mogitate.git`
+・　`docker-compose up -d --build`
 
 ## Laravel環境構築
 1. `docker-compose exec php bash`
@@ -26,9 +26,10 @@ DB_PASSWORD=laravel_pass
 ・  php artisan db:seed
 
 ## 使用技術
-   php8.3.0
-   Laravel8.83.27
-   MySQL8.0.26
+   
+   `php8.3.0`
+   `Laravel8.83.27`
+   `MySQL8.0.26`
 
 ## ER図
 
@@ -38,5 +39,5 @@ DB_PASSWORD=laravel_pass
 　
 　
 ## URL
-   環境開発:http://localhost/
-   phpMyAdmin: http://localhost:8080
+  `環境開発:http://localhost/`
+   `phpMyAdmin: http://localhost:8080`
