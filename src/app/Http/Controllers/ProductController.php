@@ -15,8 +15,7 @@ class ProductController extends Controller
 
     return view('products.index', compact('products'));
 }
-    //$products = Product::all();
-   // $products = Product::with('seasons')->get();
+    
 
     public function show($productId)
 {
@@ -24,14 +23,32 @@ class ProductController extends Controller
 
     return view('products.show', compact('product'));
 }
-    public function update(Request $request)
+    public function update(ProductRequest $request)
 {
+    $request->validate([
+    'name' => 'required|max:100',
+    'price' => 'required|integer|min:0|max:10000',
+    'season' => 'required',
+    'description' => 'required|max:120',
+    'images' => 'nullable|mimes:jpeg,png'
+   ]);
+
     $product = Product::find($request->id);
 
     $product->name = $request->name;
     $product->price = $request->price;
     $product->season = $request->season;
     $product->description = $request->description;
+
+    if ($request->hasFile('image')) {
+
+        $file = $request->file('image');
+        $filename = $file->getClientOriginalName();
+
+        $file->move(public_path('images/fruits-img'), $filename);
+
+        $product->image = $filename;
+    }
 
     $product->save();
 
@@ -53,6 +70,13 @@ class ProductController extends Controller
 }
     public function store(ProductRequest $request)
     {
+        $request->validate([
+         'name' => 'required|max:100',
+         'price' => 'required|integer|min:0|max:10000',
+         'season' => 'required',
+         'description' => 'required|max:120',
+         'image' => 'required|mimes:png,jpeg'
+        ]);
         $product = new Product();
 
         $product->name = $request->name;

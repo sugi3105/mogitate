@@ -21,7 +21,6 @@
                     @enderror
                 </div>
 
-
                 <div>
                     <label>価格
                     <span class="required">必須</span>
@@ -31,8 +30,6 @@
                     @error('price')
                       <p class="error">{{ $message }}</p>
                     @enderror
-
-                    
 
                 </div>
 
@@ -48,42 +45,34 @@
 
                 </div>
 
-
                 <div>
                     <label>季節
                     <span class="required">必須</span>
                     </label>
 
                     <div>
-
                         <label>
-                           <input type="radio" name="season" value="spring"
-                           {{ old('season') == 'spring' ? 'checked' : '' }}>
+                           <input type="radio" name="season" value="spring" {{ old('season') == 'spring' ? 'checked' : '' }}>
                             春
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="summer"
-                            {{ old('season') == 'summer' ? 'checked' : '' }}>
+                            <input type="radio" name="season" value="summer" {{ old('season') == 'summer' ? 'checked' : '' }}>
                              夏
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="autnmn"
-　　　　　　　　    　　　　 {{ old('season') == 'autumn' ? 'checked' : '' }}>
-　　　　　　　　　　　　　　　　秋
-　　　　　　　　　　　　　 </label>
-
-                        <label>
-                            <input type="radio" name="season" value="winter"
-                            {{ old('season') == 'winter' ? 'checked' : '' }}>
-                            冬
+                            <input type="radio" name="season" value="autumn" {{ old('season') == 'autumn' ? 'checked' : '' }}>
+                            秋
                         </label>
 
+                        <label>
+                            <input type="radio" name="season" value="winter" {{ old('season') == 'winter' ? 'checked' : '' }}>
+                            冬
+                        </label>
                     </div>
 
                 </div>
-
 
                 <div>
                     <label>商品説明
