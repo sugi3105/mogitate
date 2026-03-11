@@ -39,5 +39,5 @@ DB_PASSWORD=laravel_pass
 　
 　
 ## URL
-  `環境開発:http://localhost/`
-   `phpMyAdmin: http://localhost:8080`
+  環境開発:http://localhost/
+  phpMyAdmin: http://localhost:8080
