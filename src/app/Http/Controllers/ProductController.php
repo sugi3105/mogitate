@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     return view('products.show', compact('product'));
 }
-    public function update(ProductRequest $request)
+    public function update(ProductRequest $request, $id)
 {
     $request->validate([
     'name' => 'required|max:100',
@@ -33,7 +33,7 @@ class ProductController extends Controller
     'images' => 'nullable|mimes:jpeg,png'
    ]);
 
-    $product = Product::find($request->id);
+    $product = Product::find($id);
 
     $product->name = $request->name;
     $product->price = $request->price;

@@ -8,9 +8,18 @@ use App\Models\Season;
 
 class Product extends Model
 {
+    use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'price',
+        'image',
+        'season',
+        'description',
+    ];
+
     public function seasons()
 {
     return $this->belongsToMany(Season::class);
 }
-    use HasFactory;
 }

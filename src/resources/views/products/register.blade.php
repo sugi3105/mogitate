@@ -52,22 +52,22 @@
 
                     <div>
                         <label>
-                           <input type="radio" name="season" value="spring" {{ old('season') == 'spring' ? 'checked' : '' }}>
+                           <input type="radio" name="season" value="1" {{ old('season') == '1' ? 'checked' : '' }}>
                             春
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="summer" {{ old('season') == 'summer' ? 'checked' : '' }}>
+                            <input type="radio" name="season" value="2" {{ old('season') == '2' ? 'checked' : '' }}>
                              夏
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="autumn" {{ old('season') == 'autumn' ? 'checked' : '' }}>
+                            <input type="radio" name="season" value="3" {{ old('season') == '3' ? 'checked' : '' }}>
                             秋
                         </label>
 
                         <label>
-                            <input type="radio" name="season" value="winter" {{ old('season') == 'winter' ? 'checked' : '' }}>
+                            <input type="radio" name="season" value="4" {{ old('season') == '4' ? 'checked' : '' }}>
                             冬
                         </label>
                     </div>

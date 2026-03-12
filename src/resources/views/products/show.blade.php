@@ -22,7 +22,7 @@
 
     <div class="detail-form">
 
-            <form action="{{ route('products.update') }}" method="POST">
+            <form action="{{ route('products.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <input type="hidden" name="id" value="{{ $product->id }}">
