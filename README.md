@@ -1,7 +1,15 @@
 # mogitate
 #   環境構築
-・　`git clone git@github.com:sugi3105/mogitate.git`
-・　`docker-compose up -d --build`
+```
+# GitHub から git clone する
+git clone git@github.com:sugi3105/mogitate.git
+
+# clone した mogitate フォルダに移動する
+cd mogitate
+
+# docker でビルドする
+docker-compose up -d --build
+```
 
 ## Laravel環境構築
 1. `docker-compose exec php bash`
@@ -20,10 +28,14 @@ DB_PASSWORD=laravel_pass
 ・　php artisan key:generate
 
 6. マイグレーションの実行
-・　php artisan migrate
+・　php artisan migrate:fresh
 
 7. シーディングの実行
 ・  php artisan db:seed
+
+8. 実行確認  
+   `http://localhost/` へアクセスして動作確認をする  
+   エラーが出て表示できない場合は `sudo chmod -R 777 ./src/*` コマンドを実行する  
 
 ## 使用技術
    
